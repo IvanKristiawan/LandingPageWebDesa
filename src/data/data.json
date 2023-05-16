@@ -22,22 +22,26 @@
     {
       "title": "Kerajinan Keris",
       "largeImage": "img/portfolio/kerajinan-keris.jpeg",
-      "smallImage": "img/portfolio/kerajinan-keris.jpeg"
+      "smallImage": "img/portfolio/kerajinan-keris.jpeg",
+      "link": "https://kembangputihan.techkudev.com"
     },
     {
-      "title": "Batik Kayu",
-      "largeImage": "img/portfolio/batik-kayu.jpeg",
-      "smallImage": "img/portfolio/batik-kayu.jpeg"
+      "title": "Kerajinan Kayu",
+      "largeImage": "img/portfolio/batik-kayu.jpg",
+      "smallImage": "img/portfolio/batik-kayu.jpg",
+      "link": "https://sanggardiponegoro.itkitapro.com"
     },
     {
       "title": "Kerajinan Kipas",
       "largeImage": "img/portfolio/kerajinan-kipas.jpg",
-      "smallImage": "img/portfolio/kerajinan-kipas.jpg"
+      "smallImage": "img/portfolio/kerajinan-kipas.jpg",
+      "link": "https://kembangputihan.techkudev.com"
     },
     {
       "title": "Ternak Lele",
       "largeImage": "img/portfolio/ternak-lele.jpg",
-      "smallImage": "img/portfolio/ternak-lele.jpg"
+      "smallImage": "img/portfolio/ternak-lele.jpg",
+      "link": "https://kembangputihan.techkudev.com"
     }
   ],
   "Services": [
