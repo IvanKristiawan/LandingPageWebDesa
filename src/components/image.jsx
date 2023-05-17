@@ -13,7 +13,7 @@ export const Image = ({ title, smallImage,link }) => {
             src={smallImage}
             className="img-responsive"
             alt={title}
-            style={{ width: "1000px", height: "300px" }}
+            style={{ width: "1000px", height: "250px" }}
           />{" "}
         </a>{" "}
       </div>

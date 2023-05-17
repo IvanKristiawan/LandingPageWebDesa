@@ -1,7 +1,7 @@
 {
   "Header": {
     "title": "Kembang Putihan",
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum."
+    "paragraph": "Padukuhan Kembang Putihan merupakan salah satu padukuhan di Kelurahan Guwosari, Kecamatan Pajangan, Kabupaten Bantul yang letaknya ada di sisi paling utara dari Kelurahan Guwosari. Padukuhan Kembang Putihan memiliki 6 Rukun Tetangga (RT) dengan luas wilayah padukuhan ±82 hektar, terdapat 4 jenis Usaha Mikro Kecil dan Menengah (UMKM) dan Objek Wisata Goa Selarong diwilayah Padukuhan Kembang Putihan."
   },
   "About": {
     "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -17,7 +17,7 @@
       "Exercitation ullamco",
       "Lorem ipsum dolor"
     ],
-    "Location": [
+    "LocationPetinggi": [
       {
         "title": "Rumah Dukuh",
         "linkGoogleMaps": "https://goo.gl/maps/93eifHQSknQjJtyt5",
@@ -29,6 +29,26 @@
         "linkGoogleMaps": "https://goo.gl/maps/93eifHQSknQjJtyt5",
         "latitude": -7.865832,
         "longitude": 110.321856
+      }
+    ],
+    "LocationUmkm": [
+      {
+        "title": "Bewok Keris Selarong",
+        "linkGoogleMaps": "https://goo.gl/maps/p3T8VhZH8Mrm98488",
+        "latitude": -7.864780295228642,
+        "longitude": 110.32020280081855
+      },
+      {
+        "title": "Sanggar Diponegoro",
+        "linkGoogleMaps": "https://goo.gl/maps/V5USQsXUBLzdgMhi9",
+        "latitude": -7.863671881052443,
+        "longitude": 110.31789589899915
+      },
+      {
+        "title": "Slarong Indah Souvenir",
+        "linkGoogleMaps": "https://goo.gl/maps/5nBk2GbmoEFq5kNG6",
+        "latitude": -7.862524203513644,
+        "longitude": 110.315336152628
       }
     ]
   },

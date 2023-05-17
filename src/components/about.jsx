@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Pin from "../assets/pin";
+import PinBlue from "../assets/pinBlue";
 import Map, {
   Marker,
   Popup,
@@ -14,10 +15,12 @@ const TOKEN =
 
 export const About = (props) => {
   const [popupInfo, setPopupInfo] = useState(null);
+  const [popupUmkm, setPopupUmkm] = useState(null);
   const [penduduk, setPenduduk] = useState({});
+  const [umkm, setUmkm] = useState({});
 
   return (
-    <div id="about">
+    <div id="about" style={{ marginBottom: "100px", marginTop: "-100px" }}>
       <div className="container">
         <div className="row">
           <div
@@ -27,6 +30,18 @@ export const About = (props) => {
             }}
           >
             <h2>PETA</h2>
+
+            <div>
+              <div style={styleMarkerDetail}>
+                <Pin />
+                <h5>Petinggi Desa</h5>
+              </div>
+              <div style={styleMarkerDetail}>
+                <PinBlue />
+                <h5>UMKM</h5>
+              </div>
+            </div>
+
             <Map
               initialViewState={{
                 latitude: -7.864825,
@@ -44,7 +59,7 @@ export const About = (props) => {
               <ScaleControl />
 
               {props.data
-                ? props.data.Location.map((d, i) => (
+                ? props.data.LocationPetinggi.map((d, i) => (
                     <>
                       <Marker
                         key={`marker`}
@@ -75,10 +90,48 @@ export const About = (props) => {
                     </>
                   ))
                 : "Loading..."}
+
+              {props.data
+                ? props.data.LocationUmkm.map((d, i) => (
+                    <>
+                      <Marker
+                        key={`marker`}
+                        latitude={d.latitude}
+                        longitude={d.longitude}
+                        anchor="bottom"
+                        onClick={(e) => {
+                          // If we let the click event propagates to the map, it will immediately close the popup
+                          // with `closeOnClick: true`
+                          e.originalEvent.stopPropagation();
+                          setPopupUmkm(umkm);
+                        }}
+                      >
+                        <PinBlue />
+                      </Marker>
+
+                      {popupUmkm && (
+                        <Popup
+                          anchor="top"
+                          latitude={d.latitude}
+                          longitude={d.longitude}
+                          onClose={() => setPopupUmkm(null)}
+                        >
+                          <div>{d.title}</div>
+                          <a href={d.linkGoogleMaps}>Lihat</a>
+                        </Popup>
+                      )}
+                    </>
+                  ))
+                : "Loading..."}
             </Map>
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+const styleMarkerDetail = {
+  display: "flex",
+  alignItems: "center",
 };
