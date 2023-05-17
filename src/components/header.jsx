@@ -17,7 +17,7 @@ export const Header = (props) => {
                   href="#portfolio"
                   className="btn btn-custom btn-lg page-scroll"
                 >
-                  Learn More
+                  Lihat
                 </a>{" "}
               </div>
             </div>
