@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
+import { About } from "./components/about";
 import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
@@ -23,6 +24,7 @@ const App = () => {
       <Navigation />
       <Header data={landingPageData.Header} />
       <Gallery data={landingPageData.Gallery} />
+      <About data={landingPageData.About} />
       <Contact data={landingPageData.Contact} />
     </div>
   );

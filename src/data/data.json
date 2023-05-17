@@ -16,6 +16,20 @@
       "Lorem ipsum dolor",
       "Exercitation ullamco",
       "Lorem ipsum dolor"
+    ],
+    "Location": [
+      {
+        "title": "Rumah Dukuh",
+        "linkGoogleMaps": "https://goo.gl/maps/93eifHQSknQjJtyt5",
+        "latitude": -7.864825,
+        "longitude": 110.320174
+      },
+      {
+        "title": "Rt 01",
+        "linkGoogleMaps": "https://goo.gl/maps/93eifHQSknQjJtyt5",
+        "latitude": -7.865832,
+        "longitude": 110.321856
+      }
     ]
   },
   "Gallery": [
@@ -29,7 +43,7 @@
       "title": "Kerajinan Kayu",
       "largeImage": "img/portfolio/batik-kayu.jpg",
       "smallImage": "img/portfolio/batik-kayu.jpg",
-      "link": "https://sanggardiponegoro.itkitapro.com"
+      "link": "https://sanggardiponegoro.techkudev.com"
     },
     {
       "title": "Kerajinan Kipas",
