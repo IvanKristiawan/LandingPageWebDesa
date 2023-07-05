@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Pin from "../assets/pin";
 import PinBlue from "../assets/pinBlue";
+import PinGreen from "../assets/pinGreen";
 import Map, {
   Marker,
   Popup,
@@ -9,15 +10,55 @@ import Map, {
   ScaleControl,
   GeolocateControl,
 } from "react-map-gl";
+import axios from "axios";
 
 const TOKEN =
   "pk.eyJ1IjoiaXZhbi1rcmlzdGlhd2FuIiwiYSI6ImNsMWN4dHljZzA3Z2ozcHFjcnpxbDhnaTIifQ.Z7KSBghh93LRW-7aCNQzEg"; // Set your mapbox token here
 
+export const tempUrl = "http://localhost:5000";
+
 export const About = (props) => {
   const [popupInfo, setPopupInfo] = useState(null);
   const [popupUmkm, setPopupUmkm] = useState(null);
+  const [popupWisata, setPopupWisata] = useState(null);
   const [penduduk, setPenduduk] = useState({});
   const [umkm, setUmkm] = useState({});
+  const [lokasiPetinggis, setLokasiPetinggis] = useState([]);
+  const [lokasiUmkms, setLokasiUmkms] = useState([]);
+  const [lokasiWisatas, setLokasiWisatas] = useState([]);
+
+  useEffect(() => {
+    getLokasiPetinggis();
+    getLokasiUmkms();
+    getLokasiWisatas();
+  }, []);
+
+  const getLokasiPetinggis = async () => {
+    try {
+      const response = await axios.post(`${tempUrl}/lokasiPetinggis`);
+      setLokasiPetinggis(response.data);
+    } catch (err) {
+      alert(err);
+    }
+  };
+
+  const getLokasiUmkms = async () => {
+    try {
+      const response = await axios.post(`${tempUrl}/lokasiUmkms`);
+      setLokasiUmkms(response.data);
+    } catch (err) {
+      alert(err);
+    }
+  };
+
+  const getLokasiWisatas = async () => {
+    try {
+      const response = await axios.post(`${tempUrl}/lokasiWisatas`);
+      setLokasiWisatas(response.data);
+    } catch (err) {
+      alert(err);
+    }
+  };
 
   return (
     <div id="about" style={{ marginBottom: "100px", marginTop: "-100px" }}>
@@ -40,6 +81,10 @@ export const About = (props) => {
                 <PinBlue />
                 <h5>UMKM</h5>
               </div>
+              <div style={styleMarkerDetail}>
+                <PinGreen />
+                <h5>Wisata</h5>
+              </div>
             </div>
 
             <Map
@@ -58,8 +103,8 @@ export const About = (props) => {
               <NavigationControl position="top-left" />
               <ScaleControl />
 
-              {props.data
-                ? props.data.LocationPetinggi.map((d, i) => (
+              {lokasiPetinggis
+                ? lokasiPetinggis.map((d, i) => (
                     <>
                       <Marker
                         key={`marker`}
@@ -83,7 +128,7 @@ export const About = (props) => {
                           longitude={d.longitude}
                           onClose={() => setPopupInfo(null)}
                         >
-                          <div>{d.title}</div>
+                          <div>{d.namaLokasiPetinggi}</div>
                           <a href={d.linkGoogleMaps}>Lihat</a>
                         </Popup>
                       )}
@@ -91,8 +136,8 @@ export const About = (props) => {
                   ))
                 : "Loading..."}
 
-              {props.data
-                ? props.data.LocationUmkm.map((d, i) => (
+              {lokasiUmkms
+                ? lokasiUmkms.map((d, i) => (
                     <>
                       <Marker
                         key={`marker`}
@@ -116,7 +161,40 @@ export const About = (props) => {
                           longitude={d.longitude}
                           onClose={() => setPopupUmkm(null)}
                         >
-                          <div>{d.title}</div>
+                          <div>{d.namaLokasiUmkm}</div>
+                          <a href={d.linkGoogleMaps}>Lihat</a>
+                        </Popup>
+                      )}
+                    </>
+                  ))
+                : "Loading..."}
+
+              {lokasiWisatas
+                ? lokasiWisatas.map((d, i) => (
+                    <>
+                      <Marker
+                        key={`marker`}
+                        latitude={d.latitude}
+                        longitude={d.longitude}
+                        anchor="bottom"
+                        onClick={(e) => {
+                          // If we let the click event propagates to the map, it will immediately close the popup
+                          // with `closeOnClick: true`
+                          e.originalEvent.stopPropagation();
+                          setPopupWisata(umkm);
+                        }}
+                      >
+                        <PinGreen />
+                      </Marker>
+
+                      {popupWisata && (
+                        <Popup
+                          anchor="top"
+                          latitude={d.latitude}
+                          longitude={d.longitude}
+                          onClose={() => setPopupWisata(null)}
+                        >
+                          <div>{d.namaLokasiWisata}</div>
                           <a href={d.linkGoogleMaps}>Lihat</a>
                         </Popup>
                       )}
