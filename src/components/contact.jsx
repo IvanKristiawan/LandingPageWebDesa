@@ -48,14 +48,6 @@ export const Contact = (props) => {
             <div className="contact-item">
               <p>
                 <span>
-                  <i className="fa fa-phone"></i> Telepon
-                </span>{" "}
-                {props.data ? props.data.phone : "loading"}
-              </p>
-            </div>
-            <div className="contact-item">
-              <p>
-                <span>
                   <i className="fa fa-envelope-o"></i> Email
                 </span>{" "}
                 {props.data ? props.data.email : "loading"}
@@ -67,13 +59,8 @@ export const Contact = (props) => {
               <div className="social">
                 <ul>
                   <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-twitter"></i>
+                    <a href={props.data ? props.data.instagram : "/"}>
+                      <i className="fa fa-instagram"></i>
                     </a>
                   </li>
                   <li>

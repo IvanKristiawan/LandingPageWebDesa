@@ -15,8 +15,8 @@ import axios from "axios";
 const TOKEN =
   "pk.eyJ1IjoiaXZhbi1rcmlzdGlhd2FuIiwiYSI6ImNsMWN4dHljZzA3Z2ozcHFjcnpxbDhnaTIifQ.Z7KSBghh93LRW-7aCNQzEg"; // Set your mapbox token here
 
-export const tempUrl = "http://localhost:5000";
-// export const tempUrl = "https://kembangputihanapi.techkudev.com";
+// export const tempUrl = "http://localhost:5000";
+export const tempUrl = "https://kembangputihanapi.techkudev.com";
 
 export const About = (props) => {
   const [popupInfo, setPopupInfo] = useState(null);

@@ -2,8 +2,8 @@ import { Image } from "./image";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export const tempUrl = "http://localhost:5000";
-// export const tempUrl = "https://kembangputihanapi.techkudev.com";
+// export const tempUrl = "http://localhost:5000";
+export const tempUrl = "https://kembangputihanapi.techkudev.com";
 
 export const Gallery = (props) => {
   const [umkms, setUmkms] = useState([]);
